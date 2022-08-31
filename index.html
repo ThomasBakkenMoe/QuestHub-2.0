@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'prompt', sans-serif;
+            color: white;
+            background: #202731;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+
+        .bubble::after {
+            content: '';
+            border-top-left-radius: 50% 100%;
+            border-top-right-radius: 50% 100%;
+            position: absolute;
+            bottom: 0;
+            height: 85%;
+            width: 100%;
+            background-color: #010f22;
+            z-index: -1;
+
+
+        }
+
+        .blue {
+            background: #0445a0;
+        }
+
+        .red {
+            background: #d60a0a;
+        }
+
+        .pink {
+            background: #C62368;
+        }
+
+        .dark {
+            background: #010f22;
+        }
+
+        .wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 108px;
+        }
+
+        .wave .shape-fill {
+            fill: #202731;
+        }
+
+        .spacer {
+            aspect-ratio: 900/300;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .layer1 {
+            background-image: url('./layer1.svg');
+        }
+
+        .flip {
+            transform: rotate(180deg);
+        }
+
+        .blob-motion {
+            position: absolute;
+            transform: translateY(-20%);
+            z-index: 0;
+        }
+
+        .blob-content {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="blue">
+        <h1>Nice Curves</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, minus. Eaque sunt nemo, id temporibus
+            officiis inventore quibusdam perspiciatis fugiat natus sequi pariatur. Tempora obcaecati nulla sed cum,
+            quasi quisquam!</p>
+        <div class="curve"></div>
+    </section>
+    <section class="red">
+        <h1>Nice Curves</h1>
+        <p>Quas voluptatum corporis dignissimos numquam veritatis laudantium dolorem modi quae suscipit voluptates!
+            Nulla nesciunt ea pariatur nemo, mollitia ut, enim recusandae magni sapiente asperiores consequatur
+            voluptate, error voluptas voluptatem reprehenderit.</p>
+    </section>
+    <section class="pink">
+        <h1>Nice Curves</h1>
+        <p>Obcaecati exercitationem necessitatibus laboriosam similique non? Odit quam neque aspernatur, doloremque est
+            accusamus quisquam error praesentium iusto tempore vitae alias quae quasi nisi totam dicta quas modi
+            explicabo corrupti in.</p>
+    </section>
+    <section class="dark">
+        <h1>Nice Curves</h1>
+        <p>Molestias eveniet nostrum voluptas quod, ex nemo illo molestiae animi optio quibusdam fugit, quidem veniam.
+            Eos temporibus provident sit dignissimos minus nihil molestiae atque hic, voluptas fugit pariatur iste
+            adipisci.</p>
+    </section>
+    <section class="blue">
+        <h1>Nice Curves</h1>
+        <p>Rem soluta excepturi exercitationem perspiciatis! Quod veritatis blanditiis dolor voluptatum vero dolorum
+            alias? Nemo optio, saepe asperiores ratione itaque vero dolorem sapiente animi voluptas? Eaque animi
+            molestiae obcaecati ipsam. Eligendi.</p>
+    </section>
+
+    <div class="spacer layer1"></div>
+
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Pariatur, nihil. A obcaecati nulla reprehenderit tempora possimus iure, hic atque cumque consectetur corporis
+            voluptatibus libero quod placeat, necessitatibus architecto, ullam asperiores iste quidem. Facere officiis
+            eligendi deserunt. Ex, earum!</p>
+    </section>
+    <section class="red">
+        <h1>Nice Curves</h1>
+        <p>Iste facilis repellendus et deserunt veniam voluptatibus, illum velit accusantium, repudiandae rerum
+            laudantium expedita, eius aliquid vero molestiae praesentium ut soluta beatae laborum similique vel placeat
+            impedit aut. Nam, repellendus!</p>
+
+        <!--Curve-->
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <div class="spacer layer1 flip"></div>
+    <section class="pink">
+        <div class="blob-content">
+            <h1>Nice Curves</h1>
+            <p>Consectetur hic aliquid saepe corrupti, iure delectus deserunt inventore accusantium in, vel incidunt
+                officiis quaerat ipsam. Mollitia, perspiciatis? Facilis expedita unde ullam sunt impedit tenetur dolores
+                fuga repellendus placeat sint!</p>
+        </div>
+        <svg class="blob-motion" id="visual" viewBox="0 0 900 300" width="900" height="300"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <g transform="translate(438.76567491610604 171.49993177087148)">
+                <path id="blob1"
+                    d="M62.4 -68.4C81.4 -43.4 97.7 -21.7 98.7 1.1C99.8 23.8 85.6 47.6 66.6 62.4C47.6 77.3 23.8 83.1 1.9 81.3C-20 79.4 -40.1 69.7 -52.6 54.9C-65.1 40.1 -70 20 -73.6 -3.5C-77.1 -27.1 -79.2 -54.2 -66.7 -79.2C-54.2 -104.2 -27.1 -127.1 -2.7 -124.4C21.7 -121.7 43.4 -93.4 62.4 -68.4"
+                    fill="#BB004B"></path>
+            </g>
+
+            <g transform="translate(462.2181664898321 151.28581529989347)" style="visibility: hidden">
+                <path id="blob2"
+                    d="M76.7 -69.1C96.9 -56.6 109 -28.3 109.1 0.1C109.2 28.5 97.4 57 77.2 69.7C57 82.4 28.5 79.2 -2 81.2C-32.5 83.2 -65.1 90.4 -90.1 77.7C-115.1 65.1 -132.5 32.5 -133.5 -0.9C-134.4 -34.4 -118.8 -68.8 -93.8 -81.3C-68.8 -93.8 -34.4 -84.4 -3.1 -81.4C28.3 -78.3 56.6 -81.6 76.7 -69.1"
+                    fill="#BB004B"></path>
+            </g>
+
+            <g transform="translate(448.97098820529885 129.43774860707327)" style="visibility: hidden">
+                <path id="blob3"
+                    d="M57.7 -58.3C71.5 -43.8 77.3 -21.9 78.8 1.5C80.3 25 77.6 50 63.8 75C50 100 25 125 3.7 121.3C-17.7 117.7 -35.4 85.4 -49.4 60.4C-63.4 35.4 -73.7 17.7 -76.4 -2.7C-79.1 -23.1 -74.2 -46.2 -60.2 -60.7C-46.2 -75.2 -23.1 -81.1 -0.6 -80.5C21.9 -79.9 43.8 -72.8 57.7 -58.3"
+                    fill="#BB004B"></path>
+            </g>
+        </svg>
+
+        <script>
+            const tween = KUTE.fromTo(
+                '#blob1',
+                { path: '#blob2' },
+                { path: '#blob3' },
+                { repeat: 999, duration: 3000, yoyo: true }
+            )
+
+            tween.start()
+        </script>
+    </section>
+    <div class="spacer layer1"></div>
+</body>
+
+</html>
